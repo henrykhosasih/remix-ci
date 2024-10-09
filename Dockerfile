@@ -1,5 +1,5 @@
 # Stage 1: Build the Remix app
-FROM node:18-alpine AS builder
+FROM node:lts-alpine AS builder
 
 # Set the working directory inside the container
 WORKDIR /app
@@ -17,7 +17,7 @@ COPY . .
 RUN npm run build
 
 # Stage 2: Run the Remix app
-FROM node:18-alpine AS runner
+FROM node:lts-alpine AS runner
 
 # Set the working directory inside the container
 WORKDIR /app
