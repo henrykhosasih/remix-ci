@@ -35,11 +35,11 @@ jobs:
 
       # Build Docker container
       - name: Build Docker image
-        run: docker build -t remix-ci:latest .
+        run: docker build -t henrykhosasih/remix-ci:latest .
 
       # Optional: Push Docker image to Docker Hub or GitHub Packages
       - name: Log in to Docker Hub
         run: echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
 
       - name: Push Docker image
-        run: docker push remix-ci:latest
+        run: docker push henrykhosasih/remix-ci:latest
